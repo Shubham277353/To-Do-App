@@ -1,12 +1,5 @@
-export default class CreateTodo{
-    constructor(title, description, dueDate,priority ){
-        this.title = title ;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.priority = priority;
-    }
-
-    printInfo(){
-        console.log(`${this.title} - ${this.dueDate}`);
-    }
+export default function createTodo(title, description, dueDate,priority,notes,completed){
+    return{
+        title,description,dueDate,priority,notes,completed
+    };
 }
