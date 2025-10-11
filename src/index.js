@@ -1,4 +1,5 @@
 import "./style.css";
-import { addTodo } from "./addTodo";
+import CreateTodo from "./createTodos";
 
-addTodo();
+const todo1 = new CreateTodo("Buy milk","from dairy","12 october","Top");
+todo1.printInfo();
