@@ -41,6 +41,7 @@
 
 .tabs{
     padding: 8px;
+    cursor: pointer;
 }
 .tabs:hover{
     background-color: rgb(232, 231, 231);
@@ -69,4 +70,21 @@
 #todo-container {
   border: var(--border);
   padding: var(--padding);
+}
+
+#list-heading{
+  text-align: center;
+  margin: 20px;
+}
+
+.task-div{
+  border: var(--border);
+  margin: var(--margin);
+  padding: var(--padding);
+  display: flex;
+  justify-content: space-between;
+}
+
+.high{
+  background-color: orangered;
 }
