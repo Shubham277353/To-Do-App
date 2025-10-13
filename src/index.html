@@ -10,10 +10,12 @@
     <div class="container">
       <div id="sidebar">
         <div id="sidebar-tabs">
-          <div id="add-task" class="tabs">Add task</div>
-          <div id="search" class="tabs">Search</div>
-          <div id="inbox" class="tabs">Inbox</div>
-          <div id="completed" class="tabs">Completed</div>
+          <button onclick="myDialog.showModal()" id="add-task" class="tabs">
+            Add task
+          </button>
+          <button id="search" class="tabs">Search</button>
+          <button id="inbox" class="tabs">Inbox</button>
+          <button id="completed" class="tabs">Completed</button>
         </div>
         <div id="projects">
           <h2 class="tabs">My Projects</h2>
@@ -28,5 +30,25 @@
         <div id="todo-list"></div>
       </div>
     </div>
+
+    <dialog id="myDialog">
+      <div>
+        <input type="text" placeholder="Buy milk" />
+        <input type="text" placeholder="only buy full cream milk" />
+      </div>
+      <div>
+        <input type="date" />
+        <label for="priority-list">Priority:</label>
+        <select id="priority-list" name="priority">
+          <option value="high">High</option>
+          <option value="medium" selected>Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <div>
+        <button id="add-task-dialog-btn">Add Task</button>
+        <button onclick="myDialog.close()">Cancel</button>
+      </div>
+    </dialog>
   </body>
 </html>

@@ -1,10 +1,10 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 :root {
@@ -13,7 +13,7 @@
   --padding: 10px;
   --margin: 10px;
   --border: 2px solid black;
-  --light-background-color: #fcfaf8;
+  --light-background-color: #f1e5d8;
 }
 
 .container {
@@ -31,27 +31,47 @@
 }
 
 #sidebar-tabs {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-left: 6px;
-    margin-top: 20px;
-    font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 6px;
+  margin-top: 20px;
 }
 
-.tabs{
-    padding: 8px;
-    cursor: pointer;
-}
-.tabs:hover{
-    background-color: rgb(232, 231, 231);
-    border-radius: 4px;
+.tabs {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  background-color: transparent;
 }
 
 #add-task,
+#search,
+#inbox,
 #completed {
-    color: #a92304;
-    font-weight: 600;
+  border: none;
+}
+
+#add-task:active,
+#search:active,
+#inbox:active,
+#completed:active{
+  transform: translateY(1px);
+    box-shadow: 0 1px 0 #3e8e41;
+} 
+
+#add-task:hover,
+#search:hover,
+#inbox:hover,
+#completed:hover {
+  border-radius: 6px;
+  background-color: #45a049;
+}
+
+#add-task{
+  font-size: 1.2rem;
+  color: #a92304;
+  font-weight: 600;
 }
 
 #projects {
@@ -72,19 +92,30 @@
   padding: var(--padding);
 }
 
-#list-heading{
+#list-heading {
   text-align: center;
   margin: 20px;
 }
 
-.task-div{
+.task-div {
   border: var(--border);
   margin: var(--margin);
   padding: var(--padding);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.high{
-  background-color: orangered;
+.tasks {
+  border-radius: 12px;
+  box-shadow: rgb(187, 187, 187) 0px -20px 26px -20px inset;
+}
+
+#myDialog{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  font-size: 14px;
+  gap: 12px;
 }

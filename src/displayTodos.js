@@ -3,19 +3,18 @@ import { todoList } from "./addTodos";
 
 export default function display() {
   todoList.forEach((todo) => {
-
     const todoList = document.querySelector("#todo-list");
 
     const taskDiv = document.createElement("div");
     taskDiv.classList.add("task-div");
-    
+
     const titleDescriptionDivd = document.createElement("div");
     const taskh3 = document.createElement("h3");
     taskh3.classList.add("task");
     taskh3.textContent = todo.title;
 
     const taskDescription = document.createElement("p");
-    taskDescription.classList.add("task-description")
+    taskDescription.classList.add("task-description");
     taskDescription.textContent = todo.description;
 
     const dueDate = document.createElement("p");
@@ -23,14 +22,14 @@ export default function display() {
     const date = new Date(todo.dueDate);
     dueDate.textContent = date.toDateString();
 
-    if(todo.priority === "high"){
-        taskDiv.classList.add("high");
-    }else if (todo.priority === "medium"){
-        taskDiv.classList.add("medium");
-        taskDiv.style.backgroundColor = "lightblue";
-    }else{
-        taskDiv.classList.add("low");
-        taskDiv.style.backgroundColor = "lightgreen";
+    taskDiv.classList.add("tasks");
+
+    if (todo.priority === "high") {
+      taskDiv.style.backgroundColor = "orangered";
+    } else if (todo.priority === "medium") {
+      taskDiv.style.backgroundColor = "lightblue";
+    } else {
+      taskDiv.style.backgroundColor = "lightgreen";
     }
 
     titleDescriptionDivd.append(taskh3);
