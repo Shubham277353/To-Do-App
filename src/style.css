@@ -127,3 +127,31 @@
   flex-direction: column;
   gap: 12px;
 }
+
+#date-priority-field{
+  display: flex;
+  gap: 12px;
+}
+
+input{
+  font-size: 1rem;
+  padding: 6px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #fff;
+  border: 2px solid #444;
+  border-radius: 8px;
+  padding: 6px 15px 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#add-task-btn, #cancel-btn{
+  padding: 8px;
+  font-size: 1rem;
+}

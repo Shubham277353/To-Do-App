@@ -1,9 +1,9 @@
 import "./style.css";
 import { todoList } from "./addTodos";
-
+console.log(todoList);
 export default function display() {
   todoList.forEach((todo) => {
-    const todoList = document.querySelector("#todo-list");
+    const todoDiv = document.querySelector("#todo-list");
 
     const taskDiv = document.createElement("div");
     taskDiv.classList.add("task-div");
@@ -36,6 +36,6 @@ export default function display() {
     titleDescriptionDivd.append(taskDescription);
     taskDiv.append(titleDescriptionDivd);
     taskDiv.append(dueDate);
-    todoList.append(taskDiv);
+    todoDiv.append(taskDiv);
   });
 }
