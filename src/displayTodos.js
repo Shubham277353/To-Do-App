@@ -1,9 +1,16 @@
 import "./style.css";
-import { todoList } from "./addTodos";
-console.log(todoList);
-export default function display() {
-  todoList.forEach((todo) => {
-    const todoDiv = document.querySelector("#todo-list");
+import { getTodoLIst } from "./addTodos";
+
+const todoArray = getTodoLIst();
+
+console.log(todoArray.length, "todos in display()");
+console.log(todoArray);
+
+
+export function display() {
+  const todoDiv = document.querySelector("#todo-list");
+  todoDiv.innerHTML = "";
+  todoArray.forEach((todo) => {
 
     const taskDiv = document.createElement("div");
     taskDiv.classList.add("task-div");
