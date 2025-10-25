@@ -16,6 +16,7 @@ export function display() {
     taskDiv.classList.add("task-div");
 
     const titleDescriptionDivd = document.createElement("div");
+    titleDescriptionDivd.classList.add("title-description-div");
     const taskh3 = document.createElement("h3");
     taskh3.classList.add("task");
     taskh3.textContent = todo.title;

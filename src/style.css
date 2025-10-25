@@ -34,8 +34,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-left: 6px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .tabs {
@@ -43,30 +42,9 @@
   cursor: pointer;
   font-size: 1.1rem;
   background-color: transparent;
+  text-align: left;
 }
 
-#add-task,
-#search,
-#inbox,
-#completed {
-  border: none;
-}
-
-#add-task:active,
-#search:active,
-#inbox:active,
-#completed:active{
-  transform: translateY(1px);
-    box-shadow: 0 1px 0 #3e8e41;
-} 
-
-#add-task:hover,
-#search:hover,
-#inbox:hover,
-#completed:hover {
-  border-radius: 6px;
-  background-color: #45a049;
-}
 
 #add-task{
   font-size: 1.2rem;
@@ -78,6 +56,18 @@
   margin-top: 16px;
 }
 
+#heading-add-section{
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+}
+
+/* #add-project-btn{
+  font-size: 2rem;
+  color: red;
+  background-color: white;
+} */
+
 #project-list {
   display: flex;
   flex-direction: column;
@@ -85,6 +75,20 @@
   margin-left: 6px;
   margin-top: 10px;
   font-size: 1.1rem;
+}
+
+.tabs{
+  border: none;
+}
+
+.tabs:active{
+  transform: translateY(1px);
+    box-shadow: 0 1px 0 #3e8e41;
+} 
+
+.tabs:hover{
+  border-radius: 6px;
+  background-color: #45a049;
 }
 
 #todo-container {
@@ -100,7 +104,7 @@
 .task-div {
   border: var(--border);
   margin: var(--margin);
-  padding: var(--padding);
+  padding: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -109,6 +113,12 @@
 .tasks {
   border-radius: 12px;
   box-shadow: rgb(187, 187, 187) 0px -20px 26px -20px inset;
+}
+
+.title-description-div{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #myDialog{
