@@ -45,8 +45,7 @@
   text-align: left;
 }
 
-
-#add-task{
+#add-task {
   font-size: 1.2rem;
   color: #a92304;
   font-weight: 600;
@@ -56,7 +55,7 @@
   margin-top: 16px;
 }
 
-#heading-add-section{
+#heading-add-section {
   display: flex;
   justify-content: space-between;
   padding: var(--padding);
@@ -77,16 +76,16 @@
   font-size: 1.1rem;
 }
 
-.tabs{
+.tabs {
   border: none;
 }
 
-.tabs:active{
+.tabs:active {
   transform: translateY(1px);
-    box-shadow: 0 1px 0 #3e8e41;
-} 
+  box-shadow: 0 1px 0 #3e8e41;
+}
 
-.tabs:hover{
+.tabs:hover {
   border-radius: 6px;
   background-color: #45a049;
 }
@@ -115,13 +114,13 @@
   box-shadow: rgb(187, 187, 187) 0px -20px 26px -20px inset;
 }
 
-.title-description-div{
+.title-description-div {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-#myDialog{
+#myDialog {
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -132,18 +131,18 @@
   border-radius: 12px;
 }
 
-#task-fields{
+#task-fields {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-#date-priority-field{
+#date-priority-field {
   display: flex;
   gap: 12px;
 }
 
-input{
+input {
   font-size: 1rem;
   padding: 6px;
 }
@@ -161,15 +160,28 @@ select {
   cursor: pointer;
 }
 
-#add-task-btn, #cancel-btn{
+#add-task-btn,
+#cancel-btn {
   padding: 8px;
   font-size: 1rem;
 }
 
-
-.create-project-div{
+.create-project-div {
   position: absolute;
-  top: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  background: lightblue;
+  text-align: center;
+  border-radius: 10px;
+  gap: 10px;
+  border: var(--border);
+  padding: var(--padding);
+}
+
+.buttons{
+  padding: 4px;
+  font-weight: 600;
 }
