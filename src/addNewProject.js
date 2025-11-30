@@ -32,8 +32,7 @@ export default function addNewProject() {
         alert("Please enter a project name");
         return;
       }
-
-      export projectTitle.value ;
+      createProjectDiv.remove();
     })
 
     createProjectDiv.append(projectHeadin,projectTitle,projectCancelBtn,projectAddBtn);

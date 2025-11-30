@@ -18,6 +18,5 @@ export function fetchTaskDetails(){
         display();
 
         dialogBox.close();
-    
     })
 }
