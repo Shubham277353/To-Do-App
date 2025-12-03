@@ -1,5 +1,5 @@
 import { createProject } from "./projectLogic";
-
+import { displayProject } from "./displayProject";
 
 export default function addNewProject() {
   const addNewProjectBtn = document.getElementById("add-project-img");
@@ -36,7 +36,7 @@ export default function addNewProject() {
         return;
       }
       createProject(projectTitle.value);
-      
+      displayProject();
       createProjectDiv.remove();
     })
 
