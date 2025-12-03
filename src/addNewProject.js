@@ -1,3 +1,6 @@
+import { createProject } from "./projectLogic";
+
+
 export default function addNewProject() {
   const addNewProjectBtn = document.getElementById("add-project-img");
   const projectList = document.getElementById("project-list");
@@ -32,6 +35,8 @@ export default function addNewProject() {
         alert("Please enter a project name");
         return;
       }
+      createProject(projectTitle.value);
+      
       createProjectDiv.remove();
     })
 

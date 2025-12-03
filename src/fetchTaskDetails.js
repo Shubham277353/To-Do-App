@@ -19,4 +19,4 @@ export function fetchTaskDetails(){
 
         dialogBox.close();
     })
-}
+} 
