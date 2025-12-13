@@ -1,5 +1,5 @@
-export default function createTodo(title, description, dueDate,priority,completed){
+export default function createTodo(title, description, dueDate,priority,completed,project){
     return{
-        title,description,dueDate,priority,completed
+        title,description,dueDate,priority,completed,project
     };
 }
