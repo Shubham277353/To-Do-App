@@ -11,10 +11,10 @@ import createTodo from "./createTodos";
  }
 
  
- export function addTodos(title, description, dueDate, priority, completed, project){
-     const todo = new createTodo(title, description, dueDate, priority, completed, project);
+ export function addTodos(title, description, dueDate, priority, completed){
+     const todo = new createTodo(title, description, dueDate, priority, completed);
      setTodoLIst(todo);
     }
     
-    addTodos('Practice javascript', 'from TOP', '2025-10-15','high',false,"default");
-    addTodos('Buy milk', 'From store', '2025-10-12','low',false, "default");
+    addTodos('Practice javascript', 'from TOP', '2025-10-15','high',false);
+    addTodos('Buy milk', 'From store', '2025-10-12','low',false);

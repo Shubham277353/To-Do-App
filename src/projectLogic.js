@@ -1,10 +1,12 @@
 const projects = [];
 
-export function createProject(name){
-    projects.push(name);
+export function createProject(id,name,task){
+    let tasks = [task];
+    let project = {id,name,tasks}; 
+    projects.push(project);
     console.log(projects);
 }
-createProject("Default");
+createProject("p1","Default");
 
 
 export const projectsArray = ()=>{
