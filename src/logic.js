@@ -6,15 +6,15 @@ const projects = [
 
 let activeProject = 0;
 
-function addProject(name){
+export function addProject(name){
     projects.push({name,tasks:[]});
 }
 
-function addTask(title){
+export function addTask(title){
     projects[activeProject].tasks.push({title});
 }
 
-function switchProject(index){
+export function switchProject(index){
     activeProject = index;
 }
 
