@@ -1,0 +1,13 @@
+=========================================
+BTS backbone or the structure of the app
+=========================================
+
+1 empty project array contains objects with both the project name and the tasks inside it .
+Every project object will have its own tasks.
+There will be a activeProject variable containing the index of the project .
+We have multiple FUNC to manipuate the array : 
+    addProject - adds project,
+    addTasks - adds tasks to the project object with the activeProject as the pointer - project[activeProject].
+    switchProject - to switch project.
+SET each FUNC to EXPORT 
+
