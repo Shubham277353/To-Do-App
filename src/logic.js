@@ -6,23 +6,20 @@ const projects = [
 
 let activeProject = 0;
 
-export function addProject(name){
+ function addProject(name){
     projects.push({name,tasks:[]});
 }
 
-export function addTask(title){
-    projects[activeProject].tasks.push({title});
+ function addTask(title,description,dueDate,priority){
+    projects[activeProject].tasks.push({title,description,dueDate,priority});
 }
 
-export function switchProject(index){
+ function switchProject(index){
     activeProject = index;
 }
 
-console.log(projects);
-addTask("Learn js");
-console.log(projects);
+addTask("Learn Arrays","understand the basics of it","10/11/2026","High");
 addProject("Work");
-console.log(projects);
 switchProject(1);
 addTask("Cook");
-console.log(projects);
+console.log(projects[0].tasks,projects[1].tasks);
