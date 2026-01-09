@@ -1,5 +1,5 @@
 =========================================
-BTS backbone or the structure of the app
+Backbone or the structure of the app
 =========================================
 
 1 empty project array contains objects with both the project name and the tasks inside it .
@@ -11,3 +11,15 @@ We have multiple FUNC to manipuate the array :
     switchProject - to switch project.
 SET each FUNC to EXPORT 
 
+=========================================
+
+when app loads a default project is shown with some sample tasks which can be deleted later.
+The project's are fetched from the project array and its tasks.
+addTask FUNC will be used to add - title , description,date,priority.
+addProjet FUNC will be used to add - Name of the project.
+
+=========================================
+user can add tasks.
+user can add projects.
+user and set priority indicated with different colors.
+user can deltete tasks and projects.
