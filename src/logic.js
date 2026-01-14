@@ -1,5 +1,4 @@
 
-
 export const projects = [
     {
         name: "default" , tasks: []

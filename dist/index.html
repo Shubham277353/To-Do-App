@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do-app</title>
-<script defer src="main.js"></script></head>
-<body>
-    <h1>DO-TO-DOoo</h1>
-    <button id="add-task">Add Tasks</button>
-    <ul id="task-list"></ul>
-</body>
+  <script defer src="main.js"></script></head>
+  <body>
+    <h1 id="title">DO-TO-DOOO</h1>
+    <div id="container">
+      <div id="sidebar-div">
+        <button id="add-task">Add Tasks</button>
+        <div id="projects-div">
+          <div id="add-project-div">
+            <h2>My Projects</h2>
+            <button id="project-add-btn">+</button>
+          </div>
+          <div id="project-display-div"></div>
+        </div>
+      </div>
+      <div id="main-tasks-div">
+        <ul id="task-list"></ul>
+        <button id="tasks-add-btn">+</button>
+      </div>
+    </div>
+  </body>
 </html>

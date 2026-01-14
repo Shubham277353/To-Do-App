@@ -4,6 +4,10 @@
   font-size: 16px;
 }
 
+:root{
+  --font-size: 1rem;
+}
+
 #title{
   text-align:  center;
   font-size: 2rem;
@@ -16,6 +20,23 @@
 
 #container{
   display: grid;
-  grid-template-columns: 1fr 4fr ;
-  grid-template-rows: 2;
+  grid-template-columns: 1fr 4fr;
+  gap: 4em;
+}
+
+#sidebar-div{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 1.4em;
+}
+
+#add-project-div{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#main-tasks-div{
+  padding: 1em;
 }
