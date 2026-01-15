@@ -1,12 +1,25 @@
 import { addProject } from "./logic";
 
-const addProjectBtn = document.querySelector("#project-add-btn");
-const dialog = document.querySelector("#dialog");
+export function addNewProject() {
+  const addProjectBtn = document.querySelector("#project-add-btn");
+  const dialog = document.querySelector("#dlg");
+  const cancelBtn = document.querySelector("#cancel-btn");
+  const projectTitileInput = document.getElementById("name");
 
-addProjectBtn.addEventListener("click",()=>{
+  addProjectBtn.addEventListener("click", () => {
     dialog.showModal();
-})
+  });
 
+dialog.addEventListener("close",()=>{
+    let returnVlaue = dialog.returnVlaue;
+    if(returnVlaue === "submit"){
+        console.log("hello");
+        let title = projectTitileInput.value;
+        addProject(title);
+    }
+});
+
+}
 
 
 

@@ -40,3 +40,9 @@
 #main-tasks-div{
   padding: 1em;
 }
+
+#add-new-project-form{
+  padding: var(--font-size);
+  display: flex;
+  flex-direction: column;
+}
