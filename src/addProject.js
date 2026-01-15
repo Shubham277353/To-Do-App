@@ -10,16 +10,13 @@ export function addNewProject() {
     dialog.showModal();
   });
 
-dialog.addEventListener("close",()=>{
-    let returnVlaue = dialog.returnVlaue;
-    if(returnVlaue === "submit"){
-        console.log("hello");
-        let title = projectTitileInput.value;
-        addProject(title);
+  dialog.addEventListener("close", () => {
+    let value = dialog.returnValue;
+    console.log(value);
+    if (value === "submit") {
+      console.log("hello");
+      let title = projectTitileInput.value;
+      addProject(title);
     }
-});
-
+  });
 }
-
-
-
