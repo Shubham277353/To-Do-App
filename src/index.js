@@ -2,7 +2,9 @@ import "./style.css";
 import renderTasks from "./addTasks";
 import { addTask } from "./logic";
 import { addNewProject } from "./addProject";
+import renderProjects from "./renderProjects";
 
+renderProjects();
 addNewProject();
 
 const addTaskBtn = document.getElementById("add-task");
