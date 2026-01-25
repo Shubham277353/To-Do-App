@@ -1,4 +1,5 @@
 import { addProject } from "./logic";
+import renderProjects from "./renderProjects";
 
 export function addNewProject() {
   const addProjectBtn = document.querySelector("#project-add-btn");
@@ -12,11 +13,10 @@ export function addNewProject() {
 
   dialog.addEventListener("close", () => {
     let value = dialog.returnValue;
-    console.log(value);
     if (value === "submit") {
-      console.log("hello");
       let title = projectTitileInput.value;
       addProject(title);
+      renderProjects();
     }
   });
 }
