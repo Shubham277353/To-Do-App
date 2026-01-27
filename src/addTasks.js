@@ -1,18 +1,5 @@
-import {projects} from './logic';
-import {activeProject} from './logic';
-
+import {getProjectArray} from './logic';
 
 const taskList = document.getElementById("task-list");
 
-
-export default function renderTasks() {
-    taskList.innerHTML = "";
-
-    let tasks = projects[activeProject].tasks;
-
-    tasks.forEach(task =>{
-        const newtask = document.createElement("li");
-        newtask.textContent = task.title;
-        taskList.appendChild(newtask);
-    });
-}
+export default

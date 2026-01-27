@@ -1,10 +1,10 @@
-export const projects = [
+ const projects = [
     {
         name: "default" , tasks: []
     }
 ];
 
-export let activeProject = 0;
+ let activeProject = 0;
 
 console.log(projects);
 
@@ -17,8 +17,11 @@ export function addTask(title,description,dueDate,priority){
     projects[activeProject].tasks.push({title,description,dueDate,priority});
 }
 
- function switchProject(index){
+export function switchProject(index){
     activeProject = index;
 }
 
+export function getProjectArray(){
+    return projects;
+}
 
