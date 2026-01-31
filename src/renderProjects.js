@@ -11,4 +11,6 @@ export default function renderProjects(){
         projectsContainer.appendChild(projectList);
         console.log(project.name);
     })
+
+    
 }

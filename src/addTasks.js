@@ -1,5 +1,25 @@
-import {getProjectArray} from './logic';
+import { addTask } from "./logic";
 
-const taskList = document.getElementById("task-list");
+export default function addTaskForm(){
+const addTaskBtn = document.querySelectorAll(".add-task");
+const dialog = document.querySelector("#task-dlg");
+const form = document.getElementById("add-new-task-form")
 
-export default
+function btnHandle() {
+  dialog.showModal();
+}
+
+addTaskBtn.forEach(button => {
+    button.addEventListener("click",()=>btnHandle());
+});
+
+form.addEventListener("submit",(e)=>{
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const result = Object.fromEntries(formData);
+  console.log(result.description);
+  addTask(result);
+})
+
+}

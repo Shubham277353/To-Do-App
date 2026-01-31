@@ -23,14 +23,14 @@
         <form id="add-new-task-form" method="dialog">
 
             <label for="name">Title:</label>
-            <input type="text" id="name" placeholder="Home" required>
+            <input type="text" id="name" name="title" placeholder="Home" required>
 
             <label for="Description">Description:
-              <input type="text" placeholder="Buy Groceries!">
+              <input type="text" name="description" placeholder="Buy Groceries!">
             </label>
 
             <label for="due-date">
-              <input type="date" name="" id="" required>
+              <input type="date" name="dueDate" id="" required>
             </label>
 
             <label for="priority">Priority:</label>
@@ -47,7 +47,7 @@
 
     <div id="container">
       <div id="sidebar-div">
-        <button id="add-task">Add Tasks</button>
+        <button class="add-task">Add Tasks</button>
         <div id="projects-div">
           <div id="add-project-div">
             <h2>My Projects</h2>
@@ -58,7 +58,7 @@
       </div>
       <div id="main-tasks-div">
         <ul id="task-list"></ul>
-        <button id="tasks-add-btn">+</button>
+        <button class="add-task">+</button>
       </div>
     </div>
 
