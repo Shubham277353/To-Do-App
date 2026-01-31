@@ -6,22 +6,27 @@
 
  let activeProject = 0;
 
-console.log(projects);
+ 
+ export function addProject(name){
+     projects.push({name,tasks:[]});
+     console.log(projects);
+    }
+    
+    export function addTask(formData){
+        console.log(formData.title);
+        projects[activeProject].tasks.push(formData);
+    }
+    
+    export function switchProject(index){
+        activeProject = index;
+    }
+    
+    export function getProjectArray(){
+        return projects;
+    }
 
-export function addProject(name){
-    projects.push({name,tasks:[]});
+    export function gettasks(){
+    }
+    console.log(projects[activeProject].tasks) 
     console.log(projects);
-}
-
-export function addTask(title,description,dueDate,priority){
-    projects[activeProject].tasks.push({title,description,dueDate,priority});
-}
-
-export function switchProject(index){
-    activeProject = index;
-}
-
-export function getProjectArray(){
-    return projects;
-}
 

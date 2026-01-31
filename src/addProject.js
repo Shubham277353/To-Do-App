@@ -4,7 +4,6 @@ import renderProjects from "./renderProjects";
 export function addNewProject() {
   const addProjectBtn = document.querySelector("#project-add-btn");
   const dialog = document.querySelector("#dlg");
-  const cancelBtn = document.querySelector("#cancel-btn");
   const projectTitileInput = document.getElementById("name");
 
   addProjectBtn.addEventListener("click", () => {

@@ -13,8 +13,8 @@ addTaskBtn.forEach(button => {
     button.addEventListener("click",()=>btnHandle());
 });
 
-form.addEventListener("submit",(e)=>{
-  e.preventDefault();
+form.addEventListener("submit",()=>{
+  // e.preventDefault();
 
   const formData = new FormData(form);
   const result = Object.fromEntries(formData);
