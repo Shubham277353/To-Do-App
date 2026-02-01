@@ -9,11 +9,9 @@
  
  export function addProject(name){
      projects.push({name,tasks:[]});
-     console.log(projects);
     }
     
     export function addTask(formData){
-        console.log(formData.title);
         projects[activeProject].tasks.push(formData);
     }
     
@@ -26,7 +24,8 @@
     }
 
     export function gettasks(){
+       return projects[activeProject].tasks;
     }
-    console.log(projects[activeProject].tasks) 
+
     console.log(projects);
 

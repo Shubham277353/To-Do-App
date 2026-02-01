@@ -9,7 +9,6 @@ export default function renderProjects(){
         const projectList = document.createElement("li");
         projectList.textContent = `# ${project.name}`;
         projectsContainer.appendChild(projectList);
-        console.log(project.name);
     })
 
     
