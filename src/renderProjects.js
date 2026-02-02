@@ -7,7 +7,8 @@ export default function renderProjects(){
     projectsContainer.innerHTML = "";
     projects.forEach(project => {
         const projectList = document.createElement("li");
-        projectList.textContent = `# ${project.name}`;
+        projectList.classList.add("project");
+        projectList.innerHTML = `<button>${project.name}</button>`;
         projectsContainer.appendChild(projectList);
     })
 

@@ -1,4 +1,5 @@
 import { addTask } from "./logic";
+import renderTasks from "./renderTasks";
 
 export default function addTaskForm(){
 const addTaskBtn = document.querySelectorAll(".add-task");
@@ -19,6 +20,7 @@ form.addEventListener("submit",()=>{
   const result = Object.fromEntries(formData);
   console.log(result.title);
   addTask(result);
+  renderTasks();
 })
 
 }

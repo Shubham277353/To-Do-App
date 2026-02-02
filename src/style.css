@@ -50,3 +50,9 @@
 li{
   list-style: none;
 }
+
+.project button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}

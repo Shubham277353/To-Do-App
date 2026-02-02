@@ -1,14 +1,16 @@
+ import renderProjects from "./renderProjects";
+
  const projects = [
     {
-        name: "default" , tasks: []
+        name: "default",value: 0, tasks: []
     }
 ];
 
  let activeProject = 0;
 
  
- export function addProject(name){
-     projects.push({name,tasks:[]});
+ export function addProject(name,value){
+     projects.push({name,value,tasks:[]});
     }
     
     export function addTask(formData){
@@ -17,6 +19,8 @@
     
     export function switchProject(index){
         activeProject = index;
+        console.log(activeProject)
+        renderProjects();
     }
     
     export function getProjectArray(){

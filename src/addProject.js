@@ -1,5 +1,6 @@
 import { addProject } from "./logic";
 import renderProjects from "./renderProjects";
+import projectSwitchLogic from "./projectSwitchLogic";
 
 export function addNewProject() {
   const addProjectBtn = document.querySelector("#project-add-btn");
@@ -16,6 +17,7 @@ export function addNewProject() {
       let title = projectTitileInput.value;
       addProject(title);
       renderProjects();
+      projectSwitchLogic()
     }
   });
 }
