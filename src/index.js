@@ -12,8 +12,8 @@ const data2 = { title: "home ", description: "visit mummy ", dueDate: "2026-02-2
 addTask(data);
 addTask(data2);
 renderProjects();
-projectSwitchLogic();
 renderTasks();
 addTaskForm();
 addNewProject();
+projectSwitchLogic();
 

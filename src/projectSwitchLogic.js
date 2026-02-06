@@ -1,16 +1,13 @@
-import { getProjectArray } from "./logic";
 import { switchProject } from "./logic";
 
-export default function projectSwitchLogic(){
-const projects = document.querySelectorAll(".project");
-const projectArray = getProjectArray();
-projects.forEach(project =>{
-    project.addEventListener("click",()=>{
-        const projectTitle = project.textContent;
-        const projectIndex = projectArray.findIndex(p=>p.name === projectTitle);
-        // console.log(projectIndex);
-        switchProject(projectIndex);
+const projectsContainer = document.getElementById("project-display-list");
 
-    })
-})
+export default function projectSwitchLogic() {
+    projectsContainer.addEventListener("click", (e) => {
+        const projectElement = e.target.closest(".project");
+        if(!projectElement) return;
+
+      const projectId = Number(projectElement.dataset.projectId);
+      switchProject(projectId);
+    });
 }

@@ -2,13 +2,13 @@ import renderProjects from "./renderProjects";
 
 const projects = [
   {
-    id: 1,
+    id: 0,
     name: "default",
     tasks: [],
   },
 ];
 
-let projectCounter = 1;
+let projectCounter = 0;
 let activeProject = 0;
 
 export function addProject(name, value) {
