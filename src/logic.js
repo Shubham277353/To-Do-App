@@ -1,35 +1,39 @@
- import renderProjects from "./renderProjects";
+import renderProjects from "./renderProjects";
 
- const projects = [
-    {
-        name: "default",value: 0, tasks: []
-    }
+const projects = [
+  {
+    id: 1,
+    name: "default",
+    tasks: [],
+  },
 ];
 
- let activeProject = 0;
+let projectCounter = 1;
+let activeProject = 0;
 
- 
- export function addProject(name,value){
-     projects.push({name,value,tasks:[]});
-    }
-    
-    export function addTask(formData){
-        projects[activeProject].tasks.push(formData);
-    }
-    
-    export function switchProject(index){
-        activeProject = index;
-        console.log(activeProject)
-        renderProjects();
-    }
-    
-    export function getProjectArray(){
-        return projects;
-    }
+export function addProject(name, value) {
+    projectCounter += 1;
+    console.log(projectCounter);
+  projects.push({id:projectCounter,name, tasks: [] });
+  console.log(projects);
+}
 
-    export function gettasks(){
-       return projects[activeProject].tasks;
-    }
+export function addTask(formData) {
+  projects[activeProject].tasks.push(formData);
+}
 
-    console.log(projects);
+export function switchProject(index) {
+  activeProject = index;
+  console.log(activeProject);
+  renderProjects();
+}
 
+export function getProjectArray() {
+  return projects;
+}
+
+export function gettasks() {
+  return projects[activeProject].tasks;
+}
+
+console.log(projects);

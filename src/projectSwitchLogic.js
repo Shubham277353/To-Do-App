@@ -8,7 +8,7 @@ projects.forEach(project =>{
     project.addEventListener("click",()=>{
         const projectTitle = project.textContent;
         const projectIndex = projectArray.findIndex(p=>p.name === projectTitle);
-        console.log(projectIndex);
+        // console.log(projectIndex);
         switchProject(projectIndex);
 
     })
