@@ -3,7 +3,7 @@ import { getProjectArray } from "./logic";
 const projectsContainer = document.getElementById("project-display-list");
 export default function renderProjects() {
   projectsContainer.innerHTML = "";
-  
+
   const projects = getProjectArray();
 
   projects.forEach((project) => {
@@ -13,5 +13,4 @@ export default function renderProjects() {
     projectList.innerHTML = `<button>${project.name}</button>`;
     projectsContainer.appendChild(projectList);
   });
-
 }

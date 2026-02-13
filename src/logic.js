@@ -1,4 +1,5 @@
 import renderProjects from "./renderProjects";
+import renderTasks from "./renderTasks";
 
 const projects = [
   {
@@ -9,7 +10,8 @@ const projects = [
 ];
 
 let projectCounter = 0;
-let activeProject = 0;
+
+let activeProjectId = 0;
 
 export function addProject(name, value) {
     projectCounter += 1;
@@ -19,13 +21,14 @@ export function addProject(name, value) {
 }
 
 export function addTask(formData) {
-  projects[activeProject].tasks.push(formData);
+  projects[activeProjectId].tasks.push(formData);
 }
 
 export function switchProject(index) {
-  activeProject = index;
-  console.log(activeProject);
+  activeProjectId = projects.find(proj => proj.id === index);
+  console.log(activeProjectId);
   renderProjects();
+  renderTasks();
 }
 
 export function getProjectArray() {
@@ -33,7 +36,7 @@ export function getProjectArray() {
 }
 
 export function gettasks() {
-  return projects[activeProject].tasks;
+  return projects[activeProjectId].tasks;
 }
 
 console.log(projects);
