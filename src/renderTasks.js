@@ -1,9 +1,9 @@
-import { gettasks } from "./logic";
+import { getTasks } from "./logic";
 
 const taskList = document.getElementById("task-list");
 
 export default function renderTasks(){
-    const tasks = gettasks();
+    const tasks = getTasks();
 
     taskList.innerHTML = "";
     

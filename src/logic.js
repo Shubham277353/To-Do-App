@@ -22,7 +22,11 @@ export function addProject(name, value) {
 
 export function addTask(formData) {
   const selectedProject = projects.find((proj) => proj.id === activeProjectId);
-  selectedProject.tasks.push(formData);
+  const newTask = {
+    ...formData,
+    id: crypto.randomUUID()
+  }
+  selectedProject.tasks.push(newTask);
 }
 
 export function switchProject(projectId) {
@@ -41,4 +45,7 @@ export function getTasks() {
   return selectedProject.tasks;
 }
 
+export function deleteTask(taskId){
+
+}
 console.log(projects);
