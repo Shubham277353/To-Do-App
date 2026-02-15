@@ -24,8 +24,8 @@ export function addTask(formData) {
   const selectedProject = projects.find((proj) => proj.id === activeProjectId);
   const newTask = {
     ...formData,
-    id: crypto.randomUUID()
-  }
+    id: crypto.randomUUID(),
+  };
   selectedProject.tasks.push(newTask);
 }
 
@@ -45,7 +45,10 @@ export function getTasks() {
   return selectedProject.tasks;
 }
 
-export function deleteTask(taskId){
-
+export function deleteTasks(fetchedTaskId) {
+  const selectedProject = projects.find((proj)=>proj.id === activeProjectId);
+  selectedProject.tasks = selectedProject.tasks.filter((task)=> task.id !== fetchedTaskId);
+  renderTasks();
 }
+
 console.log(projects);

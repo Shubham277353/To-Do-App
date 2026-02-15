@@ -19,7 +19,15 @@ export default function renderTasks(){
         const dueDate = document.createElement("p");
         dueDate.textContent = task.dueDate;
 
-        listItem.append(title,description,dueDate);
+        listItem.dataset.taskId = task.id;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.classList.add("task-delete-btn");
+        deleteBtn.dataset.taskId = task.id;
+
+
+        listItem.append(title,description,dueDate,deleteBtn);
         taskList.append(listItem);
     }
 }
