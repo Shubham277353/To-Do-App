@@ -10,6 +10,9 @@ export default function renderTasks(){
     for(const task of tasks){
         const listItem = document.createElement("li");
 
+        const checkBox = document.createElement("input");
+        checkBox.type = "checkbox";
+
         const title = document.createElement("h2");
         title.textContent = task.title;
 
@@ -27,7 +30,7 @@ export default function renderTasks(){
         deleteBtn.dataset.taskId = task.id;
 
 
-        listItem.append(title,description,dueDate,deleteBtn);
+        listItem.append(checkBox,title,description,dueDate,deleteBtn);
         taskList.append(listItem);
     }
 }
