@@ -1,4 +1,5 @@
 import renderProjects from "./renderProjects";
+import renderTaskCompletion from "./renderTaskComplete";
 import renderTasks from "./renderTasks";
 
 const projects = [
@@ -8,8 +9,6 @@ const projects = [
     tasks: [],
   },
 ];
-
-const completedTasks = []
 
 let projectCounter = 0;
 
@@ -56,10 +55,11 @@ export function deleteTasks(fetchedTaskId) {
 
 export function taskCompleted(taskId){
   const selectedProject = projects.find((proj) => proj.id === activeProjectId);
-  const index = selectedProject.tasks.findIndex((task)=> task.id === taskId);
-  // selectedProject.tasks[index].isDone = true;
-  console.log(taskId);
+  const task = selectedProject.tasks.find((task)=> task.id === taskId);
+  task.isDone = !task.isDone;
+  console.log(task);
   console.log(selectedProject);
+  renderTaskCompletion();
 }
 
 console.log(projects);

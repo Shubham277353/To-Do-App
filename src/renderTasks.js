@@ -9,6 +9,7 @@ export default function renderTasks(){
     
     for(const task of tasks){
         const listItem = document.createElement("li");
+        listItem.classList.add("list-item");
 
         const checkBox = document.createElement("input");
         checkBox.type = "checkbox";
