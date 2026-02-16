@@ -12,6 +12,7 @@ export default function renderTasks(){
 
         const checkBox = document.createElement("input");
         checkBox.type = "checkbox";
+        checkBox.dataset.taskId = task.id;
 
         const title = document.createElement("h2");
         title.textContent = task.title;

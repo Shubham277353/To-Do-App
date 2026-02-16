@@ -4,7 +4,7 @@ const taskContainer = document.querySelector("#task-list");
 
 export default function deleteTask() {
   taskContainer.addEventListener("click", (e) => {
-    if (!e.target.matches(".task-delete-btn")) return;
+    // if (!e.target.matches(".task-delete-btn")) return;
 
     const li = e.target.closest("li");
     if (!li) return;

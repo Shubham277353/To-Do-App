@@ -54,11 +54,12 @@ export function deleteTasks(fetchedTaskId) {
   renderTasks();
 }
 
-export function taskCompleted(){
+export function taskCompleted(taskId){
   const selectedProject = projects.find((proj) => proj.id === activeProjectId);
-  if(selectedProject.tasks.find(task => task.isDone === true )){
-    
-  }
+  const index = selectedProject.tasks.findIndex((task)=> task.id === taskId);
+  // selectedProject.tasks[index].isDone = true;
+  console.log(taskId);
+  console.log(selectedProject);
 }
 
 console.log(projects);
