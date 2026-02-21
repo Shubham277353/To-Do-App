@@ -1,13 +1,12 @@
 import { taskCompleted } from "./logic";
 
-const taskContainer = document.querySelector("#task-list");
+const taskContainer = document.querySelector("#tasks-wrapper");
 
 export default function taskComplete(){
     taskContainer.addEventListener("click", (e) => {
-        const clicked = e.target.closest("input");
-        if(!clicked) return;
+        if (!e.target.matches('input[type="checkbox"]')) return;
 
-        const taskId = clicked.dataset.taskId;
+        const taskId = e.target.dataset.taskId;
         taskCompleted(taskId);
     })
 }

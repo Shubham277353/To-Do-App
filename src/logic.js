@@ -59,7 +59,7 @@ export function taskCompleted(taskId){
   task.isDone = !task.isDone;
   console.log(task);
   console.log(selectedProject);
-  renderTaskCompletion();
+  renderTasks();
 }
 
 console.log(projects);

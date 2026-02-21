@@ -6,22 +6,67 @@
     <title>To-do-app</title>
   <script defer src="main.js"></script></head>
   <body>
+    <header>
     <h1 id="title">DO-TO-DOOO</h1>
+    </header>
+
+    <dialog id="dlg">
+        <form id="add-new-project-form" method="dialog">
+            <label for="name">Title:</label>
+            <input type="text" id="name" placeholder="Home" required>
+
+            <button type="submit" id="create-project-btn" value="submit">Create Project</button>
+            <button id="cancel-btn" value="Cancel">Cancel</button>
+        </form>
+    </dialog>
+    <dialog id="task-dlg">
+        <form id="add-new-task-form" method="dialog">
+
+            <label for="name">Title:</label>
+            <input type="text" id="name" name="title" placeholder="Home" required>
+
+            <label for="Description">Description:
+              <input type="text" name="description" placeholder="Buy Groceries!">
+            </label>
+
+            <label for="due-date">
+              <input type="date" name="dueDate" id="" required>
+            </label>
+
+            <label for="priority">Priority:</label>
+            <select name="priority" id="priority">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+
+            <button type="submit" id="create-task-btn" value="submit">Create Task</button>
+            <button type="button" id="task-cancel-btn" value="Cancel">Cancel</button>
+        </form>
+    </dialog>
+
     <div id="container">
       <div id="sidebar-div">
-        <button id="add-task">Add Tasks</button>
+        <button class="add-task">Add Tasks</button>
         <div id="projects-div">
           <div id="add-project-div">
             <h2>My Projects</h2>
             <button id="project-add-btn">+</button>
           </div>
-          <div id="project-display-div"></div>
+          <ul id="project-display-list"></ul>
         </div>
       </div>
       <div id="main-tasks-div">
         <ul id="task-list"></ul>
-        <button id="tasks-add-btn">+</button>
+        <button class="add-task">+</button>
       </div>
+
+      <!-- <div id="completed-tasks-div">
+        <h2>Completed Tasks</h2>
+        <ul id="completed-tasks-list"></ul>
+      </div> -->
     </div>
+
+
   </body>
 </html>
