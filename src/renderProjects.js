@@ -14,9 +14,12 @@ export default function renderProjects() {
     const projectBtn = document.createElement("button");
     projectBtn.textContent = project.name;
     projectBtn.dataset.projectId = project.id;
+    projectBtn.classList.add("project-item");
 
     const delBtn = document.createElement("button");
     delBtn.textContent = "Delete";
+    delBtn.classList.add("project-del-btn");
+    delBtn.dataset.projId = project.id;
 
     projectList.append(projectBtn,delBtn);
     projectsContainer.appendChild(projectList);

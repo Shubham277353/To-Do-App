@@ -7,6 +7,7 @@ import renderTasks from "./renderTasks";
 import { addTask } from "./logic";
 import deleteTask from "./deleteTask";
 import taskComplete from "./taskComplete";
+import clickedDelBtn from "./projectDelete";
 
 const data = { title: "Buy milk", description: "from the rajesh dairy", dueDate: "2026-02-07", priority: "low",id: crypto.randomUUID()}
 const data2 = { title: "home ", description: "visit mummy ", dueDate: "2026-02-26", priority: "medium", id: crypto.randomUUID()}
@@ -19,4 +20,5 @@ addTaskForm();
 addNewProject();
 projectSwitchLogic();
 deleteTask();
+clickedDelBtn();
 taskComplete();
