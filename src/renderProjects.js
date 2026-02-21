@@ -7,10 +7,18 @@ export default function renderProjects() {
   const projects = getProjectArray();
 
   projects.forEach((project) => {
+    
     const projectList = document.createElement("li");
     projectList.classList.add("project");
-    projectList.dataset.projectId = project.id;
-    projectList.innerHTML = `<button>${project.name}</button>`;
+
+    const projectBtn = document.createElement("button");
+    projectBtn.textContent = project.name;
+    projectBtn.dataset.projectId = project.id;
+
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Delete";
+
+    projectList.append(projectBtn,delBtn);
     projectsContainer.appendChild(projectList);
   });
 }
