@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,42 +7,75 @@
   <script defer src="main.js"></script></head>
   <body>
     <header>
-    <h1 id="title">DO-TO-DOOO</h1>
+      <h1 id="title">DO-TO-DOOO</h1>
     </header>
 
     <dialog id="dlg">
-        <form id="add-new-project-form" method="dialog">
-            <label for="name">Title:</label>
-            <input type="text" id="name" placeholder="Home" required>
+      <form id="add-new-project-form" method="dialog">
+        <label for="name">Title:</label>
+        <input type="text" id="name" placeholder="Home" required />
 
-            <button type="submit" id="create-project-btn" value="submit">Create Project</button>
-            <button id="cancel-btn" value="Cancel">Cancel</button>
-        </form>
+        <button type="submit" id="create-project-btn" value="submit">
+          Create Project
+        </button>
+        <button id="cancel-btn" value="Cancel">Cancel</button>
+      </form>
     </dialog>
     <dialog id="task-dlg">
-        <form id="add-new-task-form" method="dialog">
+      <form id="add-new-task-form" method="dialog">
+        <label for="name">Title:</label>
+        <input type="text" id="name" name="title" placeholder="Home" required />
 
-            <label for="name">Title:</label>
-            <input type="text" id="name" name="title" placeholder="Home" required>
+        <label for="Description"
+          >Description:
+          <input type="text" name="description" placeholder="Buy Groceries!" />
+        </label>
 
-            <label for="Description">Description:
-              <input type="text" name="description" placeholder="Buy Groceries!">
-            </label>
+        <label for="due-date">
+          <input type="date" name="dueDate" id="" required />
+        </label>
 
-            <label for="due-date">
-              <input type="date" name="dueDate" id="" required>
-            </label>
+        <label for="priority">Priority:</label>
+        <select name="priority" id="priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
 
-            <label for="priority">Priority:</label>
-            <select name="priority" id="priority">
-              <option value="Low">Low</option>
-              <option value="Medium">Medium</option>
-              <option value="High">High</option>
-            </select>
+        <button type="submit" id="create-task-btn" value="submit">
+          Create Task
+        </button>
+        <button type="button" id="task-cancel-btn" value="Cancel">
+          Cancel
+        </button>
+      </form>
+    </dialog>
 
-            <button type="submit" id="create-task-btn" value="submit">Create Task</button>
-            <button type="button" id="task-cancel-btn" value="Cancel">Cancel</button>
-        </form>
+    <dialog id="task-edit-dlg">
+      <form id="edit-task-form" method="dialog">
+        <label for="name">Title: <input type="text" id="edit-title-input" name="title" /></label>
+
+        <label for="Description"
+          >Description:
+          <input type="text" id="edit-desc-input" name="description" />
+        </label>
+
+        <label for="due-date">
+          <input type="date" id="edit-due-date-input" name="dueDate" />
+        </label>
+
+        <label for="priority">Priority:</label>
+        <select name="priority" id="priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+
+        <button type="submit" id="submit-task-btn" value="submit">
+          Submit
+        </button>
+        <button type="button" id="edit-cancel-btn" value="Cancel">Cancel</button>
+      </form>
     </dialog>
 
     <div id="container">
@@ -67,7 +100,5 @@
         </div>
       </div>
     </div>
-
-
   </body>
 </html>
