@@ -66,24 +66,25 @@ export function taskCompleted(taskId) {
 
 export function projectDelete(projId) {
   projects = projects.filter((proj) => proj.id !== projId);
-  if(projId === activeProjectId){
-    if(projects.length > 0){
+  if (projId === activeProjectId) {
+    if (projects.length > 0) {
       activeProjectId = projects[0].id;
-    }
-    else{
+    } else {
       addProject("default");
-      activeProjectId = projects[projects.length -1].id;
+      activeProjectId = projects[projects.length - 1].id;
     }
   }
   renderProjects();
   renderTasks();
 }
 
-export function editForm(taskId,formData){
-  console.log(taskId,formData);
+export function editForm(taskId, formData) {
+  console.log(taskId, formData);
   const selectedProject = projects.find((proj) => proj.id === activeProjectId);
-  const selectedtask = selectedProject.tasks.find((task)=> task.id === taskId);
-  selectedtask.title = formData.title; 
+  if (!selectedProject) return;
+  const selectedtask = selectedProject.tasks.find((task) => task.id === taskId);
+  if (!selectedtask) return;
+  selectedtask.title = formData.title;
   selectedtask.description = formData.description;
   selectedtask.dueDate = formData.dueDate;
   selectedtask.priority = formData.priority;

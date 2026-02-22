@@ -1,4 +1,6 @@
+// import { parse } from "date-fns/fp";
 import { getTasks } from "./logic";
+import { parseISO, differenceInDays, format } from "date-fns";
 
 const taskList = document.getElementById("task-list");
 const completedTaskList = document.getElementById("completed-tasks-list");
@@ -28,7 +30,27 @@ export default function renderTasks() {
       description.textContent = task.description;
 
       const dueDate = document.createElement("p");
-      dueDate.textContent = task.dueDate;
+      const due = parseISO(tasks.dueDate);
+      const today = new Date();
+      const diff = differenceInDays(due, today);
+
+      let relativeDate;
+      if(diff > 1){
+        relativeDate = `${diff} later`;
+      }
+      else if (diff === 1){
+        relativeDate = "due tommorow";
+      }
+      else if (diff === 0){
+        relativeDate = "due today"
+      }
+      else {
+        relativeDate = `overdue ${Math.abs(diff)} days`;
+      }
+
+      const formattedDate = format(due, "MMM dd, yyyy");
+
+      dueDate.textContent = `Due ${formattedDate} (${relativeDate})`;
 
       listItem.dataset.taskId = task.id;
 
