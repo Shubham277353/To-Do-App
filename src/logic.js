@@ -81,6 +81,15 @@ export function projectDelete(projId) {
 
 export function editForm(taskId,formData){
   console.log(taskId,formData);
+  const selectedProject = projects.find((proj) => proj.id === activeProjectId);
+  const selectedtask = selectedProject.tasks.find((task)=> task.id === taskId);
+  selectedtask.title = formData.title; 
+  selectedtask.description = formData.description;
+  selectedtask.dueDate = formData.dueDate;
+  selectedtask.priority = formData.priority;
+
+  console.log(projects);
+  renderTasks();
 }
 
 console.log(projects);
