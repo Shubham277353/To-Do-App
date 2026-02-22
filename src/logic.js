@@ -79,3 +79,8 @@ export function projectDelete(projId) {
   renderTasks();
 }
 
+export function editForm(taskId,formData){
+  console.log(taskId,formData);
+}
+
+console.log(projects);
