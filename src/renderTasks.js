@@ -37,18 +37,22 @@ export default function renderTasks() {
       deleteBtn.classList.add("task-delete-btn");
       deleteBtn.dataset.taskId = task.id;
 
-      listItem.append(checkBox, title, description, dueDate, deleteBtn);
+      const editBtn = document.createElement("button");
+      editBtn.textContent = "Edit";
+      editBtn.classList.add("task-edit-btn");
+      editBtn.dataset.taskId = task.id;
+
+      listItem.append(checkBox, title, description, dueDate,editBtn, deleteBtn);
       taskList.append(listItem);
-    }
-    else {
-              console.log("Task is done");
+    } else {
+      console.log("Task is done");
 
       const completedListItem = document.createElement("li");
       completedListItem.classList.add("completed-list-item");
 
       const checkBox = document.createElement("input");
       checkBox.type = "checkbox";
-      checkBox.checked = task.isDone ;
+      checkBox.checked = task.isDone;
       checkBox.dataset.taskId = task.id;
 
       const title = document.createElement("h2");
