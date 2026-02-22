@@ -17,7 +17,7 @@ export default function renderProjects() {
     projectBtn.classList.add("project-item");
 
     const delBtn = document.createElement("button");
-    delBtn.textContent = "Delete";
+    delBtn.textContent = "✕";
     delBtn.classList.add("project-del-btn");
     delBtn.dataset.projId = project.id;
 

@@ -62,6 +62,8 @@ export default function renderTasks() {
       editBtn.classList.add("task-edit-btn");
       editBtn.dataset.taskId = task.id;
 
+      listItem.classList.add(`priority-${task.priority.toLowerCase()}`);
+
       listItem.append(
         checkBox,
         title,
