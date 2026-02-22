@@ -9,12 +9,26 @@ import deleteTask from "./deleteTask";
 import taskComplete from "./taskComplete";
 import clickedDelBtn from "./projectDelete";
 import taskEditDOM from "./editBtn";
+import { loadState } from "./storage";
 
-const data = { title: "Buy milk", description: "from the rajesh dairy", dueDate: "2026-02-07", priority: "low",id: crypto.randomUUID()}
-const data2 = { title: "home ", description: "visit mummy ", dueDate: "2026-02-26", priority: "medium", id: crypto.randomUUID()}
+const data = {
+  title: "Buy milk",
+  description: "from the rajesh dairy",
+  dueDate: "2026-02-07",
+  priority: "low",
+  id: crypto.randomUUID(),
+};
+const data2 = {
+  title: "home ",
+  description: "visit mummy ",
+  dueDate: "2026-02-26",
+  priority: "medium",
+  id: crypto.randomUUID(),
+};
 
 addTask(data);
 addTask(data2);
+loadState();
 renderProjects();
 renderTasks();
 addTaskForm();

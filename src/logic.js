@@ -1,5 +1,6 @@
 import renderProjects from "./renderProjects";
 import renderTasks from "./renderTasks";
+import { saveState } from "./storage";
 
 let projects = [
   {
@@ -13,11 +14,18 @@ let projectCounter = 0;
 
 let activeProjectId = 0;
 
+export function setState(loadedProjects,loadedActiveId,loadedCounter){
+  projects = loadedProjects;
+  activeProjectId = loadedActiveId;
+  projectCounter = loadedCounter
+}
+
 export function addProject(name) {
   projectCounter += 1;
   console.log(projectCounter);
   projects.push({ id: projectCounter, name, tasks: [] });
   console.log(projects);
+  saveState();
 }
 
 export function addTask(formData) {
@@ -28,6 +36,7 @@ export function addTask(formData) {
     isDone: false,
   };
   selectedProject.tasks.push(newTask);
+  saveState();
 }
 
 export function switchProject(projectId) {
@@ -35,10 +44,17 @@ export function switchProject(projectId) {
   console.log(activeProjectId);
   renderProjects();
   renderTasks();
+  saveState();
 }
 
 export function getProjectArray() {
   return projects;
+}
+export function getActiveProjectId() {
+  return activeProjectId;
+}
+export function getProjectCounter() {
+  return projectCounter;
 }
 
 export function getTasks() {
@@ -53,6 +69,7 @@ export function deleteTasks(fetchedTaskId) {
     (task) => task.id !== fetchedTaskId,
   );
   renderTasks();
+  saveState();
 }
 
 export function taskCompleted(taskId) {
@@ -62,6 +79,7 @@ export function taskCompleted(taskId) {
   console.log(task);
   console.log(selectedProject);
   renderTasks();
+  saveState();
 }
 
 export function projectDelete(projId) {
@@ -76,6 +94,7 @@ export function projectDelete(projId) {
   }
   renderProjects();
   renderTasks();
+  saveState();
 }
 
 export function editForm(taskId, formData) {
@@ -91,6 +110,7 @@ export function editForm(taskId, formData) {
 
   console.log(projects);
   renderTasks();
+  saveState();
 }
 
 console.log(projects);
