@@ -30,21 +30,19 @@ export default function renderTasks() {
       description.textContent = task.description;
 
       const dueDate = document.createElement("p");
-      const due = parseISO(tasks.dueDate);
+      const due = parseISO(task.dueDate);
       const today = new Date();
+      today.setHours(0, 0, 0, 0);
       const diff = differenceInDays(due, today);
 
       let relativeDate;
-      if(diff > 1){
-        relativeDate = `${diff} later`;
-      }
-      else if (diff === 1){
+      if (diff > 1) {
+        relativeDate = `${diff} days`;
+      } else if (diff === 1) {
         relativeDate = "due tommorow";
-      }
-      else if (diff === 0){
-        relativeDate = "due today"
-      }
-      else {
+      } else if (diff === 0) {
+        relativeDate = "due today";
+      } else {
         relativeDate = `overdue ${Math.abs(diff)} days`;
       }
 
@@ -64,7 +62,14 @@ export default function renderTasks() {
       editBtn.classList.add("task-edit-btn");
       editBtn.dataset.taskId = task.id;
 
-      listItem.append(checkBox, title, description, dueDate,editBtn, deleteBtn);
+      listItem.append(
+        checkBox,
+        title,
+        description,
+        dueDate,
+        editBtn,
+        deleteBtn,
+      );
       taskList.append(listItem);
     } else {
       console.log("Task is done");
@@ -84,7 +89,9 @@ export default function renderTasks() {
       description.textContent = task.description;
 
       const dueDate = document.createElement("p");
-      dueDate.textContent = task.dueDate;
+      const due = parseISO(task.dueDate);
+      const formattedDate = format(due, "MMM dd, yyyy");
+      dueDate.textContent = `Completed (${formattedDate})`;
 
       completedListItem.dataset.taskId = task.id;
 
