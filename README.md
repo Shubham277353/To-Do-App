@@ -1,5 +1,6 @@
 # DO-to-DOO
 
+
 ## 🧠 ProjectFlow – Modular Todo Application
 
 A multi-project task management application built using Vanilla JavaScript (ES6 Modules) with a strong focus on state-driven architecture, clean separation of concerns, and persistent storage.
@@ -11,8 +12,9 @@ This project was built to deeply understand how modern frontend applications man
 - Event delegation
 - Data persistence
 - Async-ready structure
-
+---
 🚀 Live Demo: [Do-to-Doo](https://to-do-app-flax-tau-79.vercel.app/)
+📷 Preview: ![Screenshot of the Website]()
 ---
 
 
@@ -64,55 +66,51 @@ This project intentionally avoids frameworks to deeply understand core frontend 
 
 All application state is centralized in `logic.js`.
 
+```js
 projects
 activeProjectId
 projectCounter
-
+```
 The DOM is never treated as the source of truth.
+
 
 🔹 State → Render Pattern
 
 Every state mutation triggers a re-render:
 
-addProject()
-
-deleteProject()
-
-addTask()
-
-editTask()
-
-toggleTask()
-
-deleteTask()
-
+- addProject()
+- deleteProject()
+- addTask()
+- editTask()
+- toggleTask()
+- deleteTask()
 Rendering is deterministic and based purely on current state.
+
 
 🔹 ID-Based Data Linking
 
-Projects use incremental numeric IDs
-
-Tasks use crypto.randomUUID()
-
-DOM elements link to state via data-* attributes
-
-No reliance on array indices
+- Projects use incremental numeric IDs
+- Tasks use crypto.randomUUID()
+- DOM elements link to state via data-* attributes
+- No reliance on array indices
 
 This prevents common reordering bugs.
+
 
 🔹 Event Delegation
 
 Instead of attaching multiple listeners:
 
-Project switching uses delegated listeners
-
-Task toggling uses delegated listeners
-
-Delete and edit buttons handled dynamically
+- Project switching uses delegated listeners
+- Task toggling uses delegated listeners
+- Delete and edit buttons handled dynamically
 
 This ensures stability even after full re-renders.
 
+
 🔹 Separation of Concerns
+
+``` Plain text
 src/
 │
 ├── logic.js              → State management
@@ -125,86 +123,58 @@ src/
 ├── editForm.js           → Task editing logic
 ├── index.js              → App entry point
 └── style.css
-
+```
 Each module has a single responsibility.
 
-🛠 Tech Stack
+## 🛠 Tech Stack
 
-HTML5
+- HTML5
+- CSS3
+- JavaScript (ES6 Modules)
+- Webpack
+- date-fns
+- localStorage API
 
-CSS3
+## ⚙️ Installation
 
-JavaScript (ES6 Modules)
-
-Webpack
-
-date-fns
-
-localStorage API
-
-⚙️ Installation
+```Bash
 git clone <your-repo-url>
 cd todo-app
 npm install
 npm run build
-
+```
 For development:
-
+```Bash
 npm run start
-🧠 Key Learnings
+```
 
-Designing modular frontend architecture without frameworks
 
-Managing application state cleanly
+## 🧠 Key Learnings
 
-Handling dynamic DOM updates safely
+- Designing modular frontend architecture without frameworks
+- Managing application state cleanly
+- Handling dynamic DOM updates safely
+- Understanding execution order in app initialization
+- Avoiding stale state bugs
+- Working with third-party libraries (date-fns)
+- Implementing persistent state with localStorage
 
-Understanding execution order in app initialization
+## 🧪 Edge Cases Handled
 
-Avoiding stale state bugs
+- Deleting active project safely
+- Preventing orphaned activeProjectId
+- Ensuring state loads before rendering
+- Avoiding duplicated event listeners
+- Maintaining data integrity after refresh
 
-Working with third-party libraries (date-fns)
 
-Implementing persistent state with localStorage
-
-🧪 Edge Cases Handled
-
-Deleting active project safely
-
-Preventing orphaned activeProjectId
-
-Ensuring state loads before rendering
-
-Avoiding duplicated event listeners
-
-Maintaining data integrity after refresh
-
-🔮 Future Improvements
-
-Drag-and-drop task ordering
-
-Sorting tasks by priority or due date
-
-Completion timestamps
-
-Migration to TypeScript
-
-Backend API integration
-
-Authentication system
-
-Unit testing
-
-📌 Why This Project Matters
+## 📌 Why This Project Matters
 
 This application was built to understand how frontend frameworks like React internally manage:
 
-State
-
-Re-renders
-
-Data flow
-
-Component updates
+- State
+- Re-renders
+- Data flow
+- Component updates
 
 Before using abstractions, I wanted to understand the mechanics underneath.
