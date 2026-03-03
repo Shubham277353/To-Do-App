@@ -13,8 +13,8 @@ This project was built to deeply understand how modern frontend applications man
 - Data persistence
 - Async-ready structure
 ---
-🚀 Live Demo: [Do-to-Doo](https://to-do-app-flax-tau-79.vercel.app/)
-📷 Preview: ![Screenshot of the Website]()
+🚀 Live Demo: [Do-to-Doo](https://to-do-app-flax-tau-79.vercel.app/)<br>
+📷 Preview: ![Screenshot of the Website](/Images/Screenshot.png)
 ---
 
 
